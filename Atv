@@ -1,0 +1,45 @@
+1 
+SELECT products.ProductName,suppliers.SupplierName,suppliers.Country
+FROM products
+inner JOIN suppliers ON
+products.SupplierID = suppliers.SupplierID
+WHERE CategoryID = 2
+
+2
+SELECT orders.OrderID,
+orders.OrderDate,
+shippers.ShipperName
+FROM orders
+INNER JOIN shippers
+ON orders.shipperID = shippers.shipperID
+
+3
+SELECT products.ProductName,suppliers.City
+FROM products
+INNER JOIN suppliers
+ON products.SupplierID = suppliers.SupplierID
+WHERE Price > 50
+
+4
+SELECT orders.OrderID, shippers.ShipperName
+FROM orders
+INNER JOIN shippers
+ON orders.ShipperID= shippers.ShipperID
+WHERE ShipperName LIKE '%Speedy Express%'
+
+5
+SELECT products.ProductName, suppliers.SupplierName
+FROM products
+INNER JOIN suppliers
+ON products.SupplierID= suppliers.SupplierID
+WHERE Country = 'Brazil' OR Country = 'USA'
+
+
+
+6 SELECT shippers.Phone,
+orders.OrderDate,
+orders.OrderID
+FROM shippers
+INNER JOIN orders 
+ON shippers.ShipperID = orders.ShipperID
+WHERE OrderDate LIKE '2023%'
