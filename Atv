@@ -34,8 +34,6 @@ INNER JOIN suppliers
 ON products.SupplierID= suppliers.SupplierID
 WHERE Country = 'Brazil' OR Country = 'USA'
 
-
-
 6 SELECT shippers.Phone,
 orders.OrderDate,
 orders.OrderID
@@ -43,3 +41,27 @@ FROM shippers
 INNER JOIN orders 
 ON shippers.ShipperID = orders.ShipperID
 WHERE OrderDate LIKE '2023%'
+
+7 SELECT products.ProductName, suppliers.SupplierName
+FROM products
+INNER JOIN suppliers
+ON products.SupplierID= suppliers.SupplierID
+WHERE Price BETWEEN 10 AND 20
+
+8 SELECT orders.OrderID, shippers.ShipperName
+FROM orders
+INNER JOIN shippers
+ON orders.ShipperID = shippers.ShipperID
+order by ShipperName ASC
+
+9 SELECT products.ProductName, suppliers.SupplierName
+FROM products
+LEFT JOIN suppliers
+ON products.SupplierID = suppliers.SupplierID
+
+10 SELECT orders.OrderID, shippers.ShipperName
+FROM orders
+LEFT JOIN shippers
+ON orders.ShipperID = shippers.ShipperID
+
+
